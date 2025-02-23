@@ -118,6 +118,9 @@ body {
   font-weight: 500;
 }
 
+
+
+
 /*******************************/
 /*            HEADER           */
 /*******************************/
@@ -151,32 +154,49 @@ body {
   gap: 4.8rem;
 }
 
-.main-nav-link:link,
-.main-nav-link:visited {
+/* Regular Navigation Links */
+.main-nav-link {
+  position: relative;
   display: inline-block;
   text-decoration: none;
   color: #212529;
   font-weight: 500;
   font-size: 1.8rem;
-  transition: all 0.3s;
+  transition: color 0.2s ease-in-out;
 }
 
-.main-nav-link:active,
-.main-nav-link:hover {
+/* Underline animation (EXCLUDES CTA button) */
+.main-nav-link:not(.nav-cta)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #495057;
+  transition: width 0.2s ease-in-out;
+}
+
+.main-nav-link:not(.nav-cta):hover {
   color: #495057;
 }
 
-.main-nav-link.nav-cta:link,
-.main-nav-link.nav-cta:visited {
+.main-nav-link:not(.nav-cta):hover::after {
+  width: 100%;
+}
+
+/* CTA Button Styling (NO UNDERLINE) */
+.main-nav-link.nav-cta {
   display: inline-block;
   padding: 1.2rem 2.4rem;
   border-radius: 8px;
   color: #ffffff;
   background-color: #363636;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
-.main-nav-link.nav-cta:hover,
-.main-nav-link.nav-cta:active {
+.main-nav-link.nav-cta:hover {
   background-color: #495057;
 }
 
@@ -185,14 +205,13 @@ body {
 /******************/
 .btn-mobile-nav {
   border: none;
-  background-color: none;
+  background-color: transparent;
   cursor: pointer;
-
   display: none;
 }
 
 .icon-mobile-nav {
-  height: 4.8em;
+  height: 4.8rem;
   width: 4.8rem;
   color: #212529;
 }
@@ -219,9 +238,6 @@ body {
   text-align: center;
   color: #333333; /* Dark grey text for better contrast */
 }
-
-
-
 
 .hero-text {
   padding: 2.4rem;
@@ -263,11 +279,6 @@ body {
   transform: scale(1.1);
   background-color: #f0f0f0;
 }
-
-/* .hero-text a:focus {
-  outline: 2px solid #007bff;
-  outline-offset: 4px;
-} */
 
 /* HEADER, BUTTON ANIMATION */
 @keyframes slideDown {
@@ -366,22 +377,15 @@ body {
 /*******************************/
 /*       SECTION OFFER         */
 /*******************************/
-/* .section-offer {
-  padding: 9.6rem 0;
-  background-image: url(../img/section-offer-bg.svg);
-  background-size: cover;
-} */
-/* Offer Section */
 .section-offer {
   padding: 5rem 2rem;
   background-color: #ffffff;
   opacity: 1;
   background-image: 
     radial-gradient(#999 0.6px, transparent 0.6px), 
-    radial-gradient(#999 0.6px, #ffffff 0.6px),
-    url(../img/section-offer-bg.svg);
-  background-size: 24px 24px, 24px 24px, cover;
-  background-position: 0 0, 12px 12px, center;
+    radial-gradient(#999 0.6px, #ffffff 0.6px);
+  background-size: 24px 24px, 24px 24px;
+  background-position: 0 0, 12px 12px;
 }
 
 /* Offer Cards Container */
@@ -546,7 +550,7 @@ body {
 /* SLIDER END */
 /* ********** */
 
-/* link to realizacje.html */
+/* link to projects.html */
 .projects-link:link,
 .projects-link:visited {
   display: inline-block;
@@ -571,6 +575,9 @@ body {
 .projects-link:active {
   background-color: #495057;
 }
+
+
+/* Contact Section */
 
 .section-contact {
   padding: 6.4rem 2rem 9.6rem 2rem; /* Keep this for proper spacing */
@@ -648,7 +655,7 @@ footer {
   }
 }
 
-/* -----realizacje.html------ */
+/* -----projects.html------ */
 .icon {
   margin-top: 100px; /* Adjust the value as needed */
 }
@@ -680,12 +687,7 @@ footer {
   max-width: 60rem;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-/* -----realizacje.html------ */
-
-
-
-
-
+/* -----projects.html------ */
 
 
 
@@ -827,7 +829,19 @@ footer {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .contact-banner {
-    height: 300px;
+    width: 95%; /* Adds spacing on left & right */
+    height: 200px; /* Adjusted height for mobile */
+    margin: 80px auto 20px; /* Added top margin to move it down */
+    border-radius: 16px; /* Rounded edges */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for floating effect */
+  }
+
+  .contact-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 16px; /* Ensures image follows the rounded shape */
   }
 
   .form-heading h1 {

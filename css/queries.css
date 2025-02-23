@@ -88,10 +88,7 @@
 	/******************/
 	/* VIDEO SECTION  */
 	/******************/
-	.yt-video {
-		height: 40rem;
-		width: 80rem;
-	}
+	
 
 	/*******************/
 	/* CONTACT SECTION */
@@ -242,13 +239,7 @@
 	.header-secondary {
 		font-size: 3rem;
 	}
-	/***********************/
-	/*   VIDEO SECTION     */
-	/***********************/
-	.yt-video {
-		width: 44rem;
-		height: 30rem;
-	}
+	
 
 	/***********************/
 	/*  SECTION ABOUT US   */
@@ -278,7 +269,7 @@
 	}
 
 	/************************/
-	/* REALIZATIONS SECTION */
+	/* projects SECTION */
 	/************************/
 	.slider {
 		height: 35rem;
@@ -364,13 +355,7 @@
 		font-size: 1.8rem;
 	}
 
-	/***********************/
-	/*   VIDEO SECTION     */
-	/***********************/
-	.yt-video {
-		width: 30rem;
-		height: 20rem;
-	}
+	
 
 	/***********************/
 	/*  SECTION ABOUT US   */
@@ -405,7 +390,7 @@
 		padding: 3.2rem;
 	}
 
-	/* realizacje.html */
+	/* projects.html */
 	.section-realizations .container--big {
 		padding: 0 1.2rem;
 	}
