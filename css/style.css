@@ -306,73 +306,103 @@ body {
 /*******************************/
 /*      SECTION ABOUT US       */
 /*******************************/
+/* About Us Section */
 .section-about {
-  padding: 5rem;
+  padding: 3rem 1rem; /* Reduce padding for better spacing */
   background-color: #f9f9f9;
   background-image: 
     linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(200, 200, 200, 0.3) 100%),
     radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
   background-size: cover;
   backdrop-filter: blur(8px);
+  width: 100%;
 }
 
-.icon {
-  justify-content: center;
-}
-
+/* Centering Content */
 .section-about .container--big {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem; /* Ensure it doesn't have extra side margins */
 }
 
+/* Add spacing between sections */
 .section-about .container--big:nth-child(1) {
-  margin-bottom: 6.4rem;
+  margin-bottom: 5rem;
 }
 
-.about-container:not(:last-child) {
-  margin-bottom: 9.6rem;
+/* About Content Containers */
+.about-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
 }
 
-.about-container--reverse .about-text {
-  grid-row: 1;
+/* Reverse order for alternating sections */
+.about-container--reverse {
+  flex-direction: row-reverse;
 }
 
+/* About Image */
 .about-img {
-  display: block;
-  width: 75%;
+  width: 45%;
+  max-width: 500px;
   border-radius: 8px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: block;
 }
 
+/* About Text */
 .about-text {
-  font-size: 2.4rem;
+  width: 50%;
+  font-size: 2rem;
   line-height: 1.7;
   text-align: justify;
-  text-justify: inter-word;
   max-width: 100%;
-  
-  /* Fix word-breaking issues */
   word-break: normal;
   overflow-wrap: break-word;
   hyphens: none;
 }
 
-
 /* Responsive Fix for Mobile */
 @media (max-width: 768px) {
-  .about-text {
-    font-size: 1.8rem;
-    line-height: 1.5;
-    text-align: center; /* ✅ Centered text for mobile */
+  .section-about {
+    padding: 2rem 0;
+  }
+
+  .section-about .container--big {
+    padding: 0 1rem;
+  }
+
+  .about-container {
+    flex-direction: column; /* Stack image and text on top of each other */
+    text-align: center;
+  }
+
+  .about-container--reverse {
+    flex-direction: column; /* Remove row-reverse for better stacking */
   }
 
   .about-img {
     width: 100%;
   }
+
+  .about-text {
+    width: 100%;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    padding: 0 1rem;
+  }
 }
+
 
 /*******************************/
 /*       SECTION OFFER         */
