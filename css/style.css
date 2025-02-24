@@ -407,8 +407,11 @@ body {
 /*******************************/
 /*       SECTION OFFER         */
 /*******************************/
+/*******************************/
+/*       SECTION OFFER         */
+/*******************************/
 .section-offer {
-  padding: 5rem 2rem;
+  padding: 3rem 1rem;
   background-color: #ffffff;
   opacity: 1;
   background-image: 
@@ -493,26 +496,29 @@ body {
 
 @media (max-width: 768px) {
   .section-offer {
-    padding: 3rem 1.5rem;
+    padding: 3rem 0.5rem; /* Adjusted for better spacing */
   }
 
   .offer-title {
-    font-size: 1.8rem;
-    line-height: 1.4;
+    font-size: 2rem; /* Maintain readability */
+    line-height: 1.5;
   }
 
   .offer-text {
-    font-size: 1.4rem;
-    line-height: 1.6;
+    font-size: 1.6rem; /* Keep text slightly larger */
+    line-height: 1.8;
+    padding: 2rem 1rem; /* Balanced padding for better appearance */
   }
 
-  /* Ensure cards are centered properly */
+  /* Offer Cards: Take full width with minimal side padding */
   .offer-card {
     width: 100%;
-    max-width: 95%;
-    margin: 0 auto; /* Centers the card */
+    max-width: 97%; /* Utilizes more space */
+    padding: 0 0.5rem; /* Reduced left & right padding */
+    margin: 0 auto; /* Keeps it centered */
   }
 }
+
 
 
 /****************/
